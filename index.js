@@ -1,9 +1,12 @@
 const express = require("express");
-const app = express();
-const mongoose = require("mongoose");
 const cors = require("cors");
+const app = express();
+app.use(cors({
+  origin: true
+}))
+
+const mongoose = require("mongoose");
 const ImageKit = require("imagekit");
-app.use(cors());
 app.use(express.json());
 const bcrypt = require("bcrypt");
 const User = require("./models/userSchema");
